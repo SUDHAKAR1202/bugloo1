@@ -1,0 +1,91 @@
+<p>list-roles works!</p>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h2 style="color: navy;">List of Users</h2>
+                </div>
+                <div class="col-sm-12">
+                     <button class="btn btn-warning float-sm-right mr-2 d-inline-block" type="button">&nbsp;
+                        Reset</button>&nbsp;&nbsp;
+                   
+                    <div class="container float-sm-right mr-2 d-inline-block">
+                        <div class="row ">
+                            <div class="search-user "><i class="fas fa-search"></i>&nbsp;
+                                <input type="text" name="search" [(ngModel)]="searchText"
+                                    placeholder="Search by name or email">
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <a class="btn btn-info float-sm-right mr-2 d-inline-block" type="button"><i
+                            class="fas fa-plus"></i>&nbsp;Add
+                        User</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+
+                    <div class="card">
+
+                        <!-- /.card-header -->
+                        <div class="card-body">
+
+                            <div class="table-responsive">
+                                <table id="example2" class="table table-bordered table-hover" border="5">
+                                    <thead>
+                                        <tr>
+
+                                            <th style="color:purple; text-align: center;">Id</th>
+                                            <th style="color:purple; text-align: center;">Name</th>
+                                            <th style="color:purple; text-align: center;">Email</th>
+                                            <th style="color:purple; text-align: center;">Phone Number</th>
+                                            <th style="color:purple; text-align: center;">Website</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor='let item of data | filter: searchText'>
+                                            <td style="text-align: center;">{{ item.id }}</td>
+                                            <td style="text-align: center;">{{ item.name }}</td>
+                                            <td style="text-align: center;">{{ item.email }}</td>
+                                            <td style="text-align: center;">{{ item.phone }}</td>
+                                            <td style="text-align: center;">{{ item.website }}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <div style=" margin-left: 70%;">
+                                    <pagination-controls (pageChange)="currentPg = $event"></pagination-controls>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+    <div>
+     
+
+</div>
