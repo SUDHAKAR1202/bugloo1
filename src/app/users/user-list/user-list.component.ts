@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UsersDataService } from '../services/users-data.service';
+import { UsersDataService } from '../../services/users-data.service';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class UserListComponent {
   searchTerm: string = '';
 
   constructor(private usersdata:UsersDataService ) {
-    this.usersdata.users().subscribe((data)=> {
+    this.usersdata.getusers().subscribe((data)=> {
       console.warn('data',data);
       this.data = data;
     })
